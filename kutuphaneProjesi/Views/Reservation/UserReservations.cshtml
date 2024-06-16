@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "User Reservations";
+}
+
+<h1>Welcome, @ViewData["Username"]!</h1>
+
+<h2>Your Reservations</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Book</th>
+            <th>Reserved Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reservation in (List<Reservation>)ViewData["UserReservations"])
+        {
+            var book = ((List<Book>)ViewData["Books"]).FirstOrDefault(b => b.Id == reservation.BookId);
+
+            <tr>
+                <td>@book.Title</td>
+                <td>@reservation.ReservedDate.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index" class="btn btn-primary">Back to Reservations</a>
