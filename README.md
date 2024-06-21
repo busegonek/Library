@@ -21,11 +21,11 @@ Bu proje, ASP.NET Core MVC kullanılarak geliştirilmiş basit bir kütüphane y
 
 ## Teknolojik Detaylar
 
-- **Bağımlılık Enjeksiyonu**: ASP.NET Core'un bağımlılık enjeksiyon mekanizması hizmetleri enjekte etmek için kullanılmıştır.
+- **Bağımlılık Enjeksiyonu** (Dependency Injection) : ASP.NET Core'un bağımlılık enjeksiyon mekanizması hizmetleri enjekte etmek için kullanılmıştır.
   
-- **HTTP İstek Pipeline'ı**: HTTP istekleri `app.UseRouting()` ve `app.MapControllerRoute()` kullanılarak nasıl işleneceği tanımlanmıştır.
+- **HTTP İstek Pipeline'ı** (HTTP Request Pipeline): HTTP istekleri `app.UseRouting()` ve `app.MapControllerRoute()` kullanılarak nasıl işleneceği tanımlanmıştır.
   
-- **Çerez Kullanımı**: ASP.NET Core'un `Response.Cookies` özelliği kullanılarak kullanıcının tarayıcısında çerez olarak kullanıcı adı saklanır.
+- **Çerez Kullanımı** (Cookie Usage): ASP.NET Core'un `Response.Cookies` özelliği kullanılarak kullanıcının tarayıcısında çerez olarak kullanıcı adı saklanır.
 
 ## Kullanılan Veri Yapıları
 
