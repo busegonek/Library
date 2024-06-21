@@ -1,27 +1,47 @@
-# Kütüphane Yönetim Sistemi
+# Basit Kütüphane Yönetim Sistemi
 
-Bu proje, ASP.NET Core MVC kullanılarak geliştirilmiş basit bir kütüphane yönetim sistemidir. Kullanıcılar, kullanıcı adı ve şifreleriyle giriş yapabilir, kitapları rezerve edebilir, rezervasyonlarını görüntüleyebilir ve çıkış yapabilirler. Sistem aynı kitabın aynı tarihte birden fazla rezervasyonunu engeller.
-
-## Ram üzerinde çalışan geçici bir database örnekleridir.
-
+Bu proje, ASP.NET Core MVC kullanılarak geliştirilmiş basit bir kütüphane yönetim sistemini göstermektedir. Kullanıcılar kitap rezervasyonu yapabilir, rezervasyonlarını görüntüleyebilir ve sisteme giriş yapabilirler.
 
 ## Kullanılan Teknolojiler
 
-- **ASP.NET Core MVC**
-- **C#**
-- **HTML/CSS**
-- **Razor Pages**
+- **ASP.NET Core MVC**: Web uygulamaları oluşturmak için kullanılan bir framework.
+- **Razor Pages**: ASP.NET Core MVC'de kullanılan bir template motoru.
+- **C# Programlama Dili**: Backend mantığı ve işlevselliği sağlamak için kullanılmıştır.
+- **HTML, CSS, JavaScript**: Frontend kullanıcı arayüzü ve tasarımı için kullanılmıştır.
 
-## Özellikler
+## Önemli Özellikler
 
-- **Giriş**: Kullanıcılar kullanıcı adı ve şifreleriyle giriş yapabilir.
-- **Kitap Rezervasyonu**: Kullanıcılar mevcut seçeneklerden kitap rezervasyonu yapabilir.
-- **Rezervasyonları Görüntüleme**: Kullanıcılar mevcut rezervasyonlarını görüntüleyebilir.
-- **Çıkış Yapma**: Kullanıcılar sistemden güvenli bir şekilde çıkış yapabilirler.
+- **Controller ve View Yapısı**: `HomeController` ve `ReservationController` HTTP isteklerini yönetmek ve view'leri kontrol etmek için kullanılmaktadır.
+  
+- **Kullanıcı Girişi**: `LoginController` kullanıcıların kullanıcı adı ve şifreleri ile giriş yapmalarını sağlar. Başarılı giriş sonrasında kullanıcı adı bir çerez (cookie) olarak tarayıcıya kaydedilir.
+  
+- **Rezervasyon İşlemleri**: `ReservationController` kitap rezervasyonlarını yönetir. Aynı kitabın aynı tarihte birden fazla rezervasyonunu önlemek için doğrulama yapar.
+  
+- **Kullanıcı Oturumu Yönetimi**: Giriş yapan kullanıcılar `UserReservations` action'ı ile rezervasyonlarını görüntüleyebilirler. Giriş yapmayan kullanıcılar ise giriş sayfasına yönlendirilir.
 
-## Kurulum Talimatları
+## Teknolojik Detaylar
 
-1. **Depoyu klonlayın**:
-   ```bash
-   git clone https://github.com/kullanici-adiniz/kutuphane-yonetimi.git
-   cd kutuphane-yonetimi
+- **Bağımlılık Enjeksiyonu**: ASP.NET Core'un bağımlılık enjeksiyon mekanizması hizmetleri enjekte etmek için kullanılmıştır.
+  
+- **HTTP İstek Pipeline'ı**: HTTP istekleri `app.UseRouting()` ve `app.MapControllerRoute()` kullanılarak nasıl işleneceği tanımlanmıştır.
+  
+- **Çerez Kullanımı**: ASP.NET Core'un `Response.Cookies` özelliği kullanılarak kullanıcının tarayıcısında çerez olarak kullanıcı adı saklanır.
+
+## Kullanılan Veri Yapıları
+
+- Geçici veri yapıları olarak List'ler (`List<User>`, `List<Book>`, `List<Reservation>`) kullanılmıştır. Gerçek bir projede bu yapılar kalıcı depolama için veritabanı bağlantıları ile değiştirilir.
+
+## Proje Geliştirme ve İyileştirmeler
+
+- **Veritabanı Entegrasyonu**: Gerçek projelerde veritabanlarıyla entegrasyon (örneğin, SQL Server, MySQL) yapılması gerekmektedir.
+  
+- **Güvenlik Geliştirmeleri**: Daha güçlü kimlik doğrulama yöntemleri (örneğin, şifre hashleme) ve yetkilendirme mekanizmalarının uygulanması için güvenlik iyileştirmeleri yapılabilir.
+  
+- **Frontend İyileştirmeleri**: Kullanıcı arayüzü için Bootstrap gibi framework'ler kullanılarak daha şık ve kullanıcı dostu bir görünüm sağlanabilir.
+
+## Sonuç
+
+Bu basit kütüphane yönetim sistemi, ASP.NET Core MVC ve temel web geliştirme becerilerini öğrenmek için bir başlangıç noktası sunar. Gerçek projelerde daha karmaşık gereksinimler ve özelleştirmeler gerekebilir, ancak bu proje temel bir anlayış sağlamaktadır.
+
+
+
