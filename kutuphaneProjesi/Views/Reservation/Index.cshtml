@@ -5,17 +5,21 @@
     ViewData["Title"] = "Reservation";
 }
 
-<h1>Reservation Page</h1>
+
 
 <!-- Hata mesajını göster -->
 @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
 {
-    <div class="alert alert-danger" role="alert">
+    <div class="alert alert-danger" role="alert">  
         @ViewBag.ErrorMessage
     </div>
 }
 
 <!-- Rezervasyon formu -->
+<div class="contact">
+    <div class="container mt-2">
+        <div class="row">
+            <h1>Reservation Page</h1>
 <form asp-action="Reserve">
     <div class="form-group">
         <label for="userId">User:</label>
@@ -41,10 +45,12 @@
         <label for="reservedDate">Reserved Date:</label>
         <input type="date" name="reservedDate" class="form-control" required />
     </div> <br />
-    <button type="submit" class="btn btn-primary">Reserve</button>
+    <button type="submit" class="btn text-white" style="background-color: #805E54;">Reserve</button>
+    <br />
 </form>
+      
 
-<hr />
+<hr / style="margin-top:10px">
 
 <h2>Current Reservations</h2>
 <table class="table">
@@ -91,10 +97,17 @@
     </tbody>
 </table>
 
-<hr />
+
+            <hr />
+     
 
 <!-- Kullanıcının yapmış olduğu rezervasyonları gösteren bağlantı -->
 @if (Context.Request.Cookies["Username"] != null)
 {
-    <a asp-controller="Reservation" asp-action="UserReservations" class="btn btn-primary">My Reservations</a>
+    <a asp-controller="Reservation" asp-action="UserReservations" class="btn text-white" style="background-color: #805E54;">My Reservations</a>
 }
+        </div>
+    </div>
+
+
+</div>

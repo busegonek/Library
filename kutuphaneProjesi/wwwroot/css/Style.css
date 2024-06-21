@@ -1,0 +1,97 @@
+﻿body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+figure {
+    height: 800px;
+}
+
+
+.btn:hover {
+    background-color: #5A433B !important;
+}
+
+.navbar-expand-lg .navbar-collapse {
+    display: flow !important;
+    flex-basis: auto;
+}
+
+.navbar {
+    justify-content: center;
+    /* background-color: #3e2723; Kahverengi tonunda */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.navbar-nav {
+    flex-direction: row;
+}
+
+.nav-item {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.card-text {
+}
+
+.footer {
+    /* Açık kahve tonunda arka plan */
+    padding: 20px 0;
+    width: 100%;
+    bottom: 0;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Beyaz renkte yazılar */
+}
+
+    .footer a {
+        color: #fff; /* Footer linklerinin rengi beyaz */
+        text-decoration: none;
+    }
+
+        .footer a:hover {
+            color: #d0cbcb; /* Footer linklerinin hover rengi */
+        }
+
+    .footer .col {
+        margin-bottom: 15px;
+    }
+
+.content {
+    margin-top: 40px; /* Yazı ile footer arasındaki boşluk */
+    text-align: center;
+}
+
+    .content h2 {
+        color: #623d32; /* Kahve tonunda başlık renk */
+    }
+
+    .content h3 {
+        color: #623d32 /* Kahve tonunda başlık renk */
+    }
+
+    .content p {
+        color: #050505; /* Kahve tonunda metin renk */
+    }
+
+/* Navbar hover efekti */
+.navbar-nav .nav-link {
+    transition: color 0.3s ease-in-out;
+}
+
+    .navbar-nav .nav-link:hover {
+        color: #623d32; /* Kahve tonunda hover rengi */
+    }
+
+.form-control ::selection {
+    background-color: #623d32;
+}
+
+.asiderbar {
+    width: 100%;
+    height: 1000px;
+    background-color: #623d32;
+}
+
+.contact {
+    height: 750px;
+}

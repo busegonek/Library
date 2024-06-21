@@ -2,6 +2,9 @@
     ViewData["Title"] = "Login";
 }
 
+<div class="contact">
+    <div class="container mt-2">
+        <div class="row">
 <h1>Login</h1>
 
 <form asp-action="Login">
@@ -13,9 +16,13 @@
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" class="form-control" required />
     </div> <br />
-    <button type="submit" class="btn btn-primary">Login</button>
+    <button type="submit" class="btn text-white" style="background-color: #805E54;">Login</button>
 </form>
+        </div>
+    </div>
 
+
+</div>
 @if (ViewBag.ErrorMessage != null)
 {
     <div class="alert alert-danger mt-3" role="alert">
