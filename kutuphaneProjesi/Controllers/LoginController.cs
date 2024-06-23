@@ -34,7 +34,7 @@ namespace kutuphaneProjesi.Controllers
             }
             else
             {
-                option.Expires = System.DateTime.Now.AddMinutes(1); // Örnek olarak 10 dakika geçerli olacak şekilde ayarlandı
+                option.Expires = System.DateTime.Now.AddMinutes(1); // Örnek olarak 1 dakika geçerli olacak şekilde ayarlandı
             }
 
             Response.Cookies.Append("Username", user.Username, option);
