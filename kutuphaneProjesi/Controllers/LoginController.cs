@@ -30,11 +30,11 @@ namespace kutuphaneProjesi.Controllers
             CookieOptions option = new CookieOptions();
             if (rememberMe)
             {
-                option.Expires = System.DateTime.Now.AddDays(1);
+                option.Expires = System.DateTime.Now.AddMinutes(1);
             }
             else
             {
-                option.Expires = System.DateTime.Now.AddMinutes(10); // Örnek olarak 10 dakika geçerli olacak şekilde ayarlandı
+                option.Expires = System.DateTime.Now.AddMinutes(1); // Örnek olarak 10 dakika geçerli olacak şekilde ayarlandı
             }
 
             Response.Cookies.Append("Username", user.Username, option);
